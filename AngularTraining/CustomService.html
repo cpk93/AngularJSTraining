@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomService</title>
+    <script src="angular.js"></script>
+    <link href="CustomServices.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body ng-app="myCustomModule">
+<div ng ng-controller="myCustomController">
+    <table>
+        <tr>
+            <td>Input String</td>
+            <td><input type="text" ng-model="input"></td>
+        </tr>
+        <tr>
+            <td>Output String</td>
+            <td><input type="text" ng-model="output"></td>
+        </tr>
+        <tr>
+            <td><button type="button" class=" btn btn-default" ng-click="transformString(input)">Transform String</button></td>
+        </tr>
+    </table>
+
+</div>
+
+<script>
+    var app= angular
+        .module("myCustomModule",[])
+        .controller("myCustomController", function($scope,stringService){
+        $scope.transformString=function (input)
+        {
+          $scope.output=stringService.abc(input)
+            }
+        }
+        );
+    app.factory('stringService',function () {
+        return{
+           abc : function (input) {
+                if(!input){
+                    return input;
+                }
+                else {
+                    var output="";
+                    output=input.toUpperCase();
+                        return output;
+                }
+            }
+        }
+    })
+</script>
+</body>
+</html>

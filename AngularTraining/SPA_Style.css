@@ -1,0 +1,15 @@
+a{
+    display: block;
+    padding: 5px;
+}
+
+table,td {
+    border-color: #0e90d2;
+    border-style: solid;
+}
+
+.mainContent {
+    height: 500px;
+    background-color: #E6E6E6;
+    width: 650px;
+}

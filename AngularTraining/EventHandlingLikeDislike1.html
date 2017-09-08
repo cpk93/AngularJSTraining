@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>EventHandlingLikeDislike1</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+<table>
+    <thead>
+    <tr>
+        <th>Name</th>
+        <th>Like</th>
+        <th>Dislike</th>
+        <th>Rating</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr ng-repeat="technology in technologies">
+        <td>{{technology.name}}</td>
+        <td>{{technology.like}}</td>
+        <td>{{technology.dislike}}</td>
+        <td>{{technology.rating}}</td>
+        <td><input type="button" value="like" ng-click="incrementLikes(technology)"></td>
+        <td><input type="button" value="dislike" ng-click="decrementLikes(technology)"></td>
+        <td><input type="button" value="Rating" ng-click="rating(technology)"></td>
+    </tr>
+    </tbody>
+</table>
+</div>
+<script>
+    angular
+        .module("myModule",[])
+        .controller("myController",function($scope)
+            {
+                var technologies=[
+                    {name:"C#",like:0,dislike:0,rating:5},
+                    {name:"java",like:0,dislike:0,rating:5}
+                ];
+                $scope.technologies=technologies;
+                $scope.incrementLikes=function (tech) {
+                    tech.like++;
+                }
+                $scope.decrementLikes=function (tech) {
+                    tech.dislike++;
+                }
+                $scope.rating= function (t) {
+                    t.rating++;
+                }
+            }
+        );
+
+</script>
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Closure</title>
+</head>
+<body>
+<script>
+    function addNumbers(fn,sn) {
+        var returnValue="result is :"
+        function add() {
+            return returnValue + (fn + sn);
+        }
+        return add();
+    }
+    var result=addNumbers(10,20);
+    document.write(result);
+</script>
+</body>
+</html>

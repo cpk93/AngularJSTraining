@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ModuleScope</title>
+    <script src="angular.js"></script>
+    <script src="ModuleScopeJS.js"></script>
+
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+    <table>
+        <thead>
+        <th>
+            firstname
+        </th>
+        <th>
+            lastname
+        </th>
+        <th>
+            Subject
+        </th>
+        </thead>
+        <tbody>
+    <tr ng-repeat="emp in empdetails">
+        <td>
+            {{emp.firstname}}
+        </td>
+        <td>
+            {{emp.lastname}}
+        </td>
+        <td ng-repeat=" sub in emp.subject">
+            {{sub.sname}}
+            {{sub.marks}}
+            {{sub.grade}}
+        </td>
+    </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>

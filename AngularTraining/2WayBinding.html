@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>2WayBinding</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myModule">
+<div  ng-controller="myController">
+FirstName:<input type="text" ng-model="Ename.fistname"><br><br>
+LastName:<input type="text" ng-model="Ename.lastname"><br><br>
+{{Ename.fistname}}<br>
+    {{Ename.lastname}}
+</div>
+
+<script>
+    angular
+        .module("myModule",[])
+        .controller("myController",function($scope) {
+       var Ename={
+           fistname:"Sanjay",
+           lastname:"Degaonkar"};
+       $scope.Ename=Ename;
+    });
+</script>
+</body>
+
+</html>

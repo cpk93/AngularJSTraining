@@ -1,0 +1,71 @@
+Skip to content
+Features
+Business
+Explore
+Marketplace
+Pricing
+This repository
+Search
+Sign in or Sign up
+Watch 1  Star 0  Fork 0 sanjaydegaonkar/AngularJS
+Code  Issues 0  Pull requests 0  Projects 0 Insights
+Branch: master Find file Copy pathAngularJS/AngularJSDemos/Third2_TwoWayBinding.html
+17bc447  2 hours ago
+@sanjaydegaonkar sanjaydegaonkar angularjsdemos
+1 contributor
+RawBlameHistory
+55 lines (51 sloc)  1.15 KB
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Twoway data binding with object</title>
+    <script src="angular.js"></script>
+</head>
+<body ng-app="myModule">
+<div ng-controller="myController">
+
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>
+                <input type="text" ng-model="employee.firstName"/>
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                <input type="text" ng-model="employee.lastName"/>
+            </td>
+        </tr>
+    </table>
+
+
+    <table>
+        <tr>
+            <td>First Name</td>
+            <td>
+                {{employee.firstName}}
+            </td>
+        </tr>
+        <tr>
+            <td>Last Name</td>
+            <td>
+                {{employee.lastName}}
+            </td>
+        </tr>
+    </table>
+</div>
+<script>
+    angular
+        .module("myModule",[])
+        .controller("myController",function($scope){
+            var employee = {
+                firstName : "Sanjay",
+                lastName : "Degaonkar"
+            };
+            $scope.employee=employee;
+        });
+</script>
+</body>
+</html>
